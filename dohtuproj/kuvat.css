@@ -1,0 +1,87 @@
+body {
+	margin: 0;
+}
+
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background: rgb(28, 184, 65);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+	border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+}
+
+.login {
+    width: 50%;
+}
+
+
+.container {
+    padding: 16px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li a{
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+#right {
+	float: right;
+}
+
+.active {
+    background-color: red;
+}
+
+@media screen and (max-width: 300px) {
+.login {
+       width: 100%;
+    }
+}
+
+#kuvat {
+	width: 340px;
+	height: 210px;
+}
+	
+#omg {
+	list-style-type: none;
+	display: none;
+	display: block;
+	text-decoration: none;
+}

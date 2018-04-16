@@ -1,0 +1,364 @@
+@import url("animation.css") screen;
+
+html, body {
+	min-width:960px;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+
+.dropdown #dropbtn {
+  font-size: 16px; 
+  border: none;
+  outline: none;
+  color: white;
+  font-family: inherit;
+  margin: 0; 
+  text-decoration: none;
+  border-radius: 0px;
+  background-color: #1a8cff;
+}
+.night-mode .dropdown #dropbtn {
+    background-color: red;
+}
+.dropdown #dropbtn .active {
+    background-color: #1a8cff;
+}
+
+.night-mode .dropdown #dropbtn .active {
+    background-color: red;
+}
+#dropbtn {
+    background-color: white;
+}
+
+.night-mode #dropbtn {
+    background-color: #333;
+}
+
+#dropbtn a {
+    text-decoration: none;
+    border: none;
+    border-radius: 0px;
+}
+
+.night-mode #dropbtn a {
+    color: white;
+}
+
+
+nav a:hover, .dropdown:hover #dropbtn {
+  background-color: #1a8cff;
+}
+
+.night-mode nav a:hover {
+    background-color: red;
+}
+
+.night-mode .dropdown:hover #dropbtn {
+    background-color: red;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+body {
+	margin: 0;
+	background: #f2f2f2;
+}
+
+
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background: rgb(28, 184, 65);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+	border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+}
+
+.submitKuva {
+    width: 50%;
+}
+
+
+.container {
+    padding: 16px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+nav {
+	border-bottom: 1px solid #1a8cff; 
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.night-mode nav {
+	border-bottom: 1px solid red;
+}
+
+.night-mode body {
+	background: #262626;
+}
+
+.night-mode nav li a {
+	color: white;
+}
+.night-mode nav ul {
+	background-color: #333333;
+}
+
+.night-mode nav li a:hover:not(.active) {
+	background-color: #661a00;
+}
+
+.night-mode .active {
+	background-color: red;
+}
+.night-mode #night {
+	color: white;
+}
+.night-mode #slider {
+	border: 5px solid #333;
+}
+#night-mode {
+	float: right;
+}
+
+nav li a:hover:not(.active) {
+    background-color: #e6f2ff;
+}
+
+#right {
+	float: right;
+}
+
+.active {
+    background-color: #1a8cff;
+}
+
+@media screen and (max-width: 300px) {
+.submitKuva {
+       width: 100%;
+    }
+}
+
+#kuvat img {
+	width: 250px;
+	height: 135px;
+}
+
+
+#kuvat {
+	padding-bottom: 50px;
+}
+
+#kuvat #omg a:hover {
+	-webkit-filter: blur(2px); /* Safari 6.0 - 9.0 */
+    filter: blur(2px);
+}
+
+#omg {
+	list-style-type: none;
+	display: inline;
+	text-decoration: none;
+}
+
+
+
+/* LAYOUT */
+.container {
+	margin:0 auto;
+	overflow:hidden;
+	width:960px;
+}
+
+/* CONTENT SLIDER */
+#content-slider {
+	width:100%;
+	height:360px;
+	margin:10px auto 0;
+}
+/* SLIDER */
+#slider {
+	background:#000;
+	border:5px solid #eaeaea;
+	box-shadow:1px 1px 5px rgba(0,0,0,0.7);
+	height:320px;
+	width:680px;
+	margin:40px auto 0;
+	overflow:visible;
+	position:relative;
+}
+#mask {
+	overflow:hidden;
+	height:320px;
+}
+#slider ul {
+	margin:0;
+	padding:0;
+	position:relative;
+}
+#slider li {
+	width:680px;
+	height:320px;
+	position:absolute;
+	top:-325px;
+	list-style:none;
+}
+
+#slider li.firstanimation {
+	-moz-animation:cycle 25s linear infinite;	
+	-webkit-animation:cycle 25s linear infinite;		
+}
+#slider li.secondanimation {
+	-moz-animation:cycletwo 25s linear infinite;
+	-webkit-animation:cycletwo 25s linear infinite;		
+}
+#slider li.thirdanimation {
+	-moz-animation:cyclethree 25s linear infinite;
+	-webkit-animation:cyclethree 25s linear infinite;		
+}
+#slider li.fourthanimation {
+	-moz-animation:cyclefour 25s linear infinite;
+	-webkit-animation:cyclefour 25s linear infinite;		
+}
+#slider li.fifthanimation {
+	-moz-animation:cyclefive 25s linear infinite;
+	-webkit-animation:cyclefive 25s linear infinite;		
+}
+#slider li.sixthanimation {
+	-moz-animation:cyclefive 25s linear infinite;
+	-webkit-animation:cyclefive 25s linear infinite;
+}
+
+#slider .tooltip {
+	background:rgba(0,0,0,0.7);
+	width:300px;
+	height:60px;
+	position:relative;
+	bottom:75px;
+	left:-320px;
+	-moz-transition:all 0.3s ease-in-out;
+	-webkit-transition:all 0.3s ease-in-out;  
+}
+#slider .tooltip h1 {
+	color:#fff;
+	font-size:24px;
+	font-weight:300;
+	line-height:60px;
+	padding:0 0 0 20px;
+}
+#slider li#first:hover .tooltip, 
+#slider li#second:hover .tooltip, 
+#slider li#third:hover .tooltip, 
+#slider li#fourth:hover .tooltip, 
+#slider li#fifth:hover .tooltip,
+#slider li#sixth:hover .tooltip {
+	left:0px;
+}
+#slider:hover li, 
+#slider:hover .progress-bar {
+	-moz-animation-play-state:paused;
+	-webkit-animation-play-state:paused;
+}
+
+/* PROGRESS BAR */
+.progress-bar { 
+	position:relative;
+	top:-5px;
+	width:680px; 
+	height:5px;
+	background:#000;
+	-moz-animation:fullexpand 25s ease-out infinite;
+	-webkit-animation:fullexpand 25s ease-out infinite;
+}
+
+	.rating {
+		  unicode-bidi: bidi-override;
+		  direction: rtl;
+		  text-align: center;
+		  font-size: 35px;
+		}
+		.rating > span {
+		  display: inline-block;
+		  position: relative;
+		  width: 1.1em;
+		}
+		.rating > span:hover,
+		.rating > span:hover ~ span {
+		  color: transparent;
+		}
+		.rating > span:hover:before,
+		.rating > span:hover ~ span:before {
+		   content: "\2605";
+		   position: absolute;
+		   left: 0;
+		   color: gold;
+		}
+		
+		textarea {
+			
+		}
