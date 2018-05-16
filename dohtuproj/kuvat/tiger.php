@@ -42,7 +42,7 @@ if (isset($_POST['submitKuva'])) {
 }
 
 if (isset($_POST['submitKuva'])) {
-    if (empty($_POST['comment'])) {
+    if (isset($_POST['comment'])) {
         
     } else {
     $query3->execute(array($user, $kuva, $date, $comment));
@@ -95,6 +95,8 @@ $connection = null;
 			</div>
 			</div>
 			</div>
+  
+  
 	<center>
 	<h1 id="night"> Arvostelu </h1>
 	</center>

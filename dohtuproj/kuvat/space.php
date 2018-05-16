@@ -12,29 +12,35 @@ $user = $_SESSION['ID'];
 $kuva = "Avaruus";
 $date = gmdate("j\.m\.Y H:i:s ");
 
-try {
-    // yhteys tietokantaan
-    $connection = new PDO("mysql:host=localhost;dbname=dohtuproj", "root", "");
+// tietokanta tiedot
+$servername = "localhost";
+$dbname = "dohtuproj";
+$username = "root";
+$password = "";
 
-    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// yhteys tietokantaan
+$connection = new mysqli("localhost", "root", "", "dohtuproj");
+
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
+}
 
 // syöttää saadut tiedot lomakkeesta tietokantaan
-    $query = $connection->prepare("INSERT INTO arvio(userID, kuva, arvio) VALUES(?,?,?)");
-    $query2 = $connection->prepare("INSERT INTO kuva(nimi, userID, arvio, kommentti) VALUES (?,?,?,?)");
-    $query3 = $connection->prepare("INSERT INTO kommentti(userID, kuva, date, text) VALUES (?,?,?,?)");
+    $query = $connection->query("INSERT INTO arvio(userID, kuva, arvio) VALUES(?,?,?)");
+    $query2 = $connection->query("INSERT INTO kuva(nimi, userID, arvio, kommentti) VALUES (?,?,?,?)");
+    $query3 = $connection->query("INSERT INTO kommentti(userID, kuva, date, text) VALUES (?,?,?,?)");
+    
+    $result = $connection->query("SELECT kuva, date, text, kayttajat.username FROM kommentti INNER JOIN kayttajat WHERE kuva = '$kuva' LIMIT 3");
 
-    echo "";
-} catch (PDOException $e) {
-    die("VIRHE: " . $e->getMessage());
-}
+
 
 // validointi tähdille - elikkä varmistaa palautusta ei tule jos tähtiä ei ole valittuna
 if (isset($_POST['submitKuva'])) {
     if (isset($_POST['rating'])) {
         $rating = htmlspecialchars($_POST['rating']);
         $comment = htmlspecialchars($_POST['comment']);
-        $query->execute(array($user, $kuva, $rating));
-        $query2->execute(array($kuva, $user, $rating, $comment));
+        $query = array($user, $kuva, $rating);
+        $query2 = array($kuva, $user, $rating, $comment);
         $success = '<span style="color:green;font-size:32px;">Kiitos arvostelusta!</span>';
     } else {
         $error = '<span style="color:red;font-size:32px;">Tähtiarvostelu pakollinen arvostelun lähettämiseen</span>';
@@ -42,7 +48,7 @@ if (isset($_POST['submitKuva'])) {
 }
 
 if (isset($_POST['submitKuva'])) {
-    if (empty($_POST['comment'])) {
+    if (isset($_POST['comment'])) {
         
     } else {
     $query3->execute(array($user, $kuva, $date, $comment));
@@ -51,7 +57,7 @@ if (isset($_POST['submitKuva'])) {
 
 
 // sulkee yhteyden
-$connection = null;
+$connection->close();
 ?>
 
 <!DOCTYPE html>
@@ -97,6 +103,16 @@ $connection = null;
                 </div>
             </div>
         </div>
+        
+        <?php
+		if ($result->num_rows > 0) {
+			while ($row = $result->fetch_assoc()) {
+                            echo '<div id="night">' . $row["username"]. '</div>';
+                           echo '<div id="night2">' . $row["text"] .  '</div>'; 
+                            
+                        }
+                        }
+                        ?>
     <center>
         <?php
         if (isset($_POST['submitKuva'])) {
