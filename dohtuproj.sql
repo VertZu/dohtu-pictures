@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2018 at 11:58 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.1
+-- Generation Time: 20.05.2018 klo 17:11
+-- Palvelimen versio: 10.1.28-MariaDB
+-- PHP Version: 7.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `arvio`
+-- Rakenne taululle `arvio`
 --
 
 CREATE TABLE `arvio` (
@@ -36,7 +36,7 @@ CREATE TABLE `arvio` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `arvio`
+-- Vedos taulusta `arvio`
 --
 
 INSERT INTO `arvio` (`arviointi_ID`, `userID`, `kuva`, `arvio`) VALUES
@@ -52,12 +52,25 @@ INSERT INTO `arvio` (`arviointi_ID`, `userID`, `kuva`, `arvio`) VALUES
 (10, 51, 'Anime', '8'),
 (11, 51, 'Anime', '1'),
 (12, 51, 'Avaruus', '2'),
-(13, 51, 'Anime', '1');
+(13, 51, 'Anime', '1'),
+(14, 52, 'Avaruus', '8'),
+(15, 52, 'Avaruus', '8'),
+(16, 52, 'Avaruus', '8'),
+(17, 52, 'Avaruus', '8'),
+(18, 52, 'Avaruus', '8'),
+(19, 52, 'Avaruus', '8'),
+(20, 52, 'Avaruus', '2'),
+(21, 52, 'Avaruus', '1'),
+(22, 52, 'Avaruus', '1'),
+(23, 52, 'Avaruus', '3'),
+(24, 52, 'Avaruus', '4'),
+(25, 52, 'Avaruus', '8'),
+(26, 52, 'Avaruus', '5');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kayttajat`
+-- Rakenne taululle `kayttajat`
 --
 
 CREATE TABLE `kayttajat` (
@@ -71,7 +84,7 @@ CREATE TABLE `kayttajat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kayttajat`
+-- Vedos taulusta `kayttajat`
 --
 
 INSERT INTO `kayttajat` (`userID`, `name`, `surname`, `username`, `password`, `email`, `rooli`) VALUES
@@ -81,7 +94,7 @@ INSERT INTO `kayttajat` (`userID`, `name`, `surname`, `username`, `password`, `e
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kommentti`
+-- Rakenne taululle `kommentti`
 --
 
 CREATE TABLE `kommentti` (
@@ -93,7 +106,7 @@ CREATE TABLE `kommentti` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kommentti`
+-- Vedos taulusta `kommentti`
 --
 
 INSERT INTO `kommentti` (`kommentti_ID`, `userID`, `kuva`, `date`, `text`) VALUES
@@ -102,13 +115,15 @@ INSERT INTO `kommentti` (`kommentti_ID`, `userID`, `kuva`, `date`, `text`) VALUE
 (3, 51, 'Orava', '9.04.2018 07:48:57 ', 'testi123'),
 (4, 51, 'Koira', '9.04.2018 07:49:12 ', 'testi123'),
 (5, 51, 'Anime', '9.04.2018 07:49:26 ', 'testi123'),
-(6, 51, 'Avaruus', '9.04.2018 09:13:00 ', '3\r\n'),
-(7, 51, 'Anime', '10.04.2018 06:07:08 ', 'kys\r\n');
+(7, 51, 'Anime', '10.04.2018 06:07:08 ', 'kys\r\n'),
+(8, 52, 'Avaruus', '18.05.2018 14:54:24 ', 'AWdwadwadwadwa'),
+(13, 52, 'Avaruus', '18.05.2018 15:25:42 ', 'adwadawdwadwadwa'),
+(14, 52, 'Avaruus', '20.05.2018 13:59:59 ', '.hjlkugkliyfgjyutdfklhÃ¶oikhjlikygujhtgfrhtyrsdrtweashgflhloiuhÃ¶oughkuyfjyurtdlgh');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kuva`
+-- Rakenne taululle `kuva`
 --
 
 CREATE TABLE `kuva` (
@@ -120,7 +135,7 @@ CREATE TABLE `kuva` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kuva`
+-- Vedos taulusta `kuva`
 --
 
 INSERT INTO `kuva` (`kuva_ID`, `nimi`, `userID`, `arvio`, `kommentti`) VALUES
@@ -136,7 +151,13 @@ INSERT INTO `kuva` (`kuva_ID`, `nimi`, `userID`, `arvio`, `kommentti`) VALUES
 (10, 'Anime', 51, 8, 'testi123'),
 (11, 'Anime', 51, 1, ''),
 (12, 'Avaruus', 51, 2, '3\r\n'),
-(13, 'Anime', 51, 1, 'kys\r\n');
+(13, 'Anime', 51, 1, 'kys\r\n'),
+(15, 'Avaruus', 52, 8, 'dwadwadwadawdwadwa'),
+(16, 'Avaruus', 52, 8, 'dwadwadwadawdwadwa'),
+(17, 'Avaruus', 52, 8, 'AWdwadwadwadwa'),
+(19, 'Avaruus', 52, 1, ''),
+(20, 'Avaruus', 52, 1, ''),
+(21, 'Avaruus', 52, 5, '.hjlkugkliyfgjyutdfklhÃ¶oikhjlikygujhtgfrhtyrsdrtweashgflhloiuhÃ¶oughkuyfjyurtdlgh');
 
 --
 -- Indexes for dumped tables
@@ -177,7 +198,7 @@ ALTER TABLE `kuva`
 -- AUTO_INCREMENT for table `arvio`
 --
 ALTER TABLE `arvio`
-  MODIFY `arviointi_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `arviointi_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `kayttajat`
@@ -189,32 +210,32 @@ ALTER TABLE `kayttajat`
 -- AUTO_INCREMENT for table `kommentti`
 --
 ALTER TABLE `kommentti`
-  MODIFY `kommentti_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `kommentti_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `kuva`
 --
 ALTER TABLE `kuva`
-  MODIFY `kuva_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `kuva_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- Constraints for dumped tables
+-- Rajoitteet vedostauluille
 --
 
 --
--- Constraints for table `arvio`
+-- Rajoitteet taululle `arvio`
 --
 ALTER TABLE `arvio`
   ADD CONSTRAINT `arvio_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `kayttajat` (`userID`);
 
 --
--- Constraints for table `kommentti`
+-- Rajoitteet taululle `kommentti`
 --
 ALTER TABLE `kommentti`
   ADD CONSTRAINT `kommentti_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `kayttajat` (`userID`);
 
 --
--- Constraints for table `kuva`
+-- Rajoitteet taululle `kuva`
 --
 ALTER TABLE `kuva`
   ADD CONSTRAINT `kuva_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `kayttajat` (`userID`);
