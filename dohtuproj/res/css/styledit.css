@@ -172,6 +172,7 @@ nav li {
 }
 .night-mode #night {
 	color: white;
+        position: relative;
 }
 .night-mode #slider {
 	border: 5px solid #333;
@@ -183,12 +184,93 @@ nav li {
 	color: white;
 }
 
+.night-mode #name {
+	color: white;
+        position:absolute;
+}
+
+#name {
+    position: absolute;
+}
+
+#kommenttisektio h1 {
+    padding-right: 15px;
+    align-content: center;
+}
+
+.night-mode #kommenttisektio h1 {
+    padding-left: 15px;
+    letter-spacing: 4px;
+    padding-right: 15px;
+}
+
+#kommenttisektio {
+    padding-left: 40px;
+    border: 3px solid #a9a9a9;
+    position: absolute;
+    border-radius: 4px;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.night-mode #kommenttisektio {
+    padding-left: 40px;
+    border: 3px solid #333;
+    position: absolute;
+    border-radius: 4px;
+    word-break: break-word;
+}
+
+#kommenttisektio2 {
+    display: none;
+    word-break: break-word;
+}
+
+.night-mode #kommenttisektio2 {
+    display: none;   
+    word-break: break-word;
+}
+.clearfix {
+      display: block;
+    content: "";
+    clear: both;
+    float: left;
+}
+
+
+#comment {
+	color: #f2f2f2;
+	background-color: #bfbfbf;
+	border: 1px solid white;
+	border-radius: 4px;
+	padding-left: 5px;
+        position: absolute;
+        word-break: break-word;
+        display: block;
+       
+        
+}
+
+.night-mode #comment {
+	color: black;
+	background-color: #bfbfbf;
+	border: 1px solid black;
+	border-radius: 4px;
+	padding-left: 5px;
+	position: absolute;
+        word-break: break-word;
+        display:block;
+        
+}
+
 #night2 {
 	color: white;
 	background-color: #bfbfbf;
 	border: 1px solid white;
 	border-radius: 4px;
 	padding-left: 5px;
+        position: absolute;
+        overflow: hidden;
 }
 	
 .night-mode #night2 {
@@ -198,6 +280,7 @@ nav li {
 	border-radius: 4px;
 	padding-left: 5px;
 	position: absolute;
+        overflow: hidden;
 }
 	
 	

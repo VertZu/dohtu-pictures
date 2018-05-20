@@ -35,6 +35,7 @@ $connection->close();
     <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Kuvat</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" media="screen" href="res/css/fix.css"/>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400italic,400,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
@@ -63,10 +64,18 @@ $connection->close();
 		<?php
 		if ($result->num_rows > 0) {
 			while ($row = $result->fetch_assoc()) {
-				echo '<div id="night">' . $row['nimi'] . " " .$row['arvio'] . " " .$row['kommentti'] . '</div>';
+				echo '<td><div id="night"><strong>' . $row["nimi"] . '</strong>    ' .$row["arvio"] . ' arvosana<div id="night2">' .$row["kommentti"] . '</div><a onclick="return confirm("Delete this record?"") href="delete.php?kuva_ID=' .$row["kuva_ID"]. '" class="delete">   Poista</a></td></div><br><br>';
 			}
 		}
 				?>
 		
 		<script src="nightmode.js"></script>
+                <script>$('a.delete').on('click', function() {
+    var choice = confirm('Haluatko varmasti poistaa tämän kommentin?');
+    if(choice === true) {
+        return true;
+    }
+    return false;
+});</script>
+                    
 	</body>
