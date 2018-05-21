@@ -10,16 +10,7 @@ if (isset($_SESSION['loggedin'])) {
 
 $id = $_SESSION["ID"];
 
-$servername = "localhost";
-$dbname = "dohtuproj";
-$username = "root";
-$password = "";
-
-$connection = new mysqli("localhost", "root", "", "dohtuproj");
-
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
-}
+include 'config.php';
 
 $result = $connection->query("SELECT * FROM kuva WHERE userID = '$id'");
 

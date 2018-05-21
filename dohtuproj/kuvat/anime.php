@@ -12,18 +12,8 @@ $user = $_SESSION['ID'];
 $kuva = "Anime";
 $date = gmdate("j\.m\.Y H:i:s ");
 
-// tietokanta tiedot
-$servername = "localhost";
-$dbname = "dohtuproj";
-$username = "root";
-$password = "";
+include '../config.php';
 
-// yhteys tietokantaan
-$connection = new mysqli("localhost", "root", "", "dohtuproj");
-
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
-}
 
 // syöttää saadut tiedot lomakkeesta tietokantaan
 $query = "INSERT INTO arvio(userID, kuva, arvio) VALUES(?,?,?)";
@@ -37,8 +27,8 @@ $stmt->bind_param("sss", $user, $kuva, $rating);
 $stmt2->bind_param("ssss", $kuva, $user, $rating, $comment);
 $stmt3->bind_param("ssss", $user, $kuva, $date, $comment);
 
-$result = $connection->query("SELECT kuva, date, text, kayttajat.username FROM kommentti INNER JOIN kayttajat WHERE kuva = '$kuva' LIMIT 3");
-$result2 = $connection->query("SELECT kuva, date, text, kayttajat.username FROM kommentti INNER JOIN kayttajat WHERE kuva = '$kuva' LIMIT 3, 100");
+$result = $connection->query("SELECT kuva, date, text, kayttajat.username FROM kommentti INNER JOIN kayttajat WHERE kuva = '$kuva' and kayttajat.userID = kommentti.userID LIMIT 3");
+$result2 = $connection->query("SELECT kuva, date, text, kayttajat.username FROM kommentti INNER JOIN kayttajat WHERE kuva = '$kuva' and kayttajat.userID = kommentti.userID LIMIT 3, 100");
 
 
 

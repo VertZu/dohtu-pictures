@@ -8,16 +8,7 @@ if (isset($_SESSION['loggedin'])) {
     header('Location: ' . 'kirjaudu');
 }
 
-$servername = "localhost";
-$dbname = "dohtuproj";
-$username = "root";
-$password = "";
-
-$connection = new mysqli("localhost", "root", "", "dohtuproj");
-// Check connection
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
-}
+include 'config.php';
 
 $id = $_GET['kuva_ID']; 
 
