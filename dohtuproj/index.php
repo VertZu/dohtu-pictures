@@ -101,7 +101,7 @@ if (isset($_SESSION['loggedin'])) {
 <h3 id="night"> Valitse haluamasi kuva, jonka haluat arvostella</h3>
 </center>
 <div id="kuvat">
-
+    <center>
 <ul>
 <li id="omg"> <a href="kuvat/space.php"><img src="images/space.jpg" alt="Avaruus"/></a></li>
 <li id="omg"> <a href="kuvat/tiger.php"><img src="images/tiger.jpg" alt="Tiger"/></a></li>
@@ -109,7 +109,7 @@ if (isset($_SESSION['loggedin'])) {
 <li id="omg"> <a href="kuvat/doggo.php"><img src="images/doggo.jpg" alt="Koira"/></a></li>
 <li id="omg"> <a href="kuvat/anime.php"><img src="images/anime.png" alt="Anime"/></a></li>
 </ul>
-
+    </center>
 </div>
 
 <script src="nightmode.js"></script>
