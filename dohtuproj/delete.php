@@ -10,14 +10,14 @@ if (isset($_SESSION['loggedin'])) {
 
 include 'config.php';
 
-$id = $_GET['kuva_ID']; 
+$id = $_GET['kommentti_ID']; 
 
-if(isset($_GET['kuva_ID'])) {
-   $query = "DELETE FROM kuva WHERE kuva_ID = " . $id . "";
+if(isset($_GET['kommentti_ID'])) {
+   $query = "DELETE FROM kommentti WHERE kommentti_ID = " . $id . "";
    $result = mysqli_query($connection, $query);
-    if($result)
+    if(($result) === TRUE ) {
         echo "Onnistui";
-
+    }
 } else {
     echo 'Virhe';
 }

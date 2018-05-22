@@ -12,7 +12,7 @@ $id = $_SESSION["ID"];
 
 include 'config.php';
 
-$result = $connection->query("SELECT * FROM kuva WHERE userID = '$id'");
+$result = $connection->query("SELECT * FROM kommentti WHERE userID = '$id'");
 
 
 
@@ -55,7 +55,7 @@ $connection->close();
 		<?php
 		if ($result->num_rows > 0) {
 			while ($row = $result->fetch_assoc()) {
-				echo '<td><div id="night"><strong>' . $row["nimi"] . '</strong>    ' .$row["arvio"] . ' arvosana<div id="night2">' .$row["kommentti"] . '</div><a onclick="return confirm("Delete this record?"") href="delete.php?kuva_ID=' .$row["kuva_ID"]. '" class="delete">   Poista</a></td></div><br><br>';
+				echo '<td><div id="night"><strong>' . $row["kuva"] . '</strong>    ' .$row["date"] . ' arvosana<div id="night2">' .$row["text"] . '</div><a onclick="return confirm("Delete this record?"") href="delete.php?kommentti_ID=' .$row["kommentti_ID"]. '" class="delete">   Poista</a></td></div><br><br>';
 			}
 		}
 				?>
