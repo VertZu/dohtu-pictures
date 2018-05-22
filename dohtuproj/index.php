@@ -1,5 +1,6 @@
 <?PHP
 session_start();
+ini_set('default_charset', 'utf-8');
 if (isset($_SESSION['loggedin'])) {
     // talletetaan tieto muuttujaan, jotta helpompi käyttää myöhemmin html-koodissa
     $loggedin = $_SESSION['loggedin'];
@@ -21,7 +22,7 @@ if (isset($_SESSION['loggedin'])) {
         <nav id="yo">
             <ul id="menu">
                 <div class="dropdown">
-                    <button id="dropbtn"><a class="active"  href="/dohtuproj/">Kuvat</a></button>
+                    <button id="dropbtn"><a class="active"  href="../dohtuproj">Kuvat</a></button>
                     
                     
                     <div class="dropdown-content">

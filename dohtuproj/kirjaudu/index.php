@@ -1,11 +1,13 @@
 <?php
+session_start();
+ini_set('default_charset', 'utf-8');
 
 include '../config.php';
 
 
     
 
-session_start();
+
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -52,9 +54,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <body>
         <nav id="yo">
             <ul id="menu">
-                <li><a href="/dohtuproj/">Kuvat</a></li>
-                <li><a href="/dohtuproj/register">Rekisteröityminen</a></li>
-                <li><a class="active" href="/dohtuproj/kirjaudu">Kirjautuminen</a></li>
+                <li><a href="../">Kuvat</a></li>
+                <li><a href="../register">Rekisteröityminen</a></li>
+                <li><a class="active" href="../kirjaudu">Kirjautuminen</a></li>
             </ul>
         </nav>
         <h2 id="night">Kirjaudu sisään</h2>

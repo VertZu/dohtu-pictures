@@ -12,7 +12,7 @@ if (isset($_SESSION['loggedin'])){
 <html>
     <head>
 	<!-- Ohjaa sivulle -->
-        <meta http-equiv="refresh" content="0;url=/dohtuproj/"/>
+        <meta http-equiv="refresh" content="0;url=../"/>
 		<style>
 		h1 {
 			font-size: 60px;

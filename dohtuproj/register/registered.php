@@ -1,4 +1,5 @@
 <?php
+ini_set('default_charset', 'utf-8');
 
 $name = htmlspecialchars($_POST["name"]);
 $surname = htmlspecialchars($_POST["surname"]);
@@ -11,7 +12,7 @@ $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 try {
 	// yhteys tietokantaan
-$connection = new PDO("mysql:host=localhost;dbname=dohtuproj", "root", "");
+$connection = new PDO("mysql:host=Opetus1:3306;dbname=s1600988", "s1600988", "8HOmCcn1");
 
 $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -32,7 +33,7 @@ $connection = null;
 <html>
     <head>
 	<!-- Ohjaa sivulle -->
-        <meta http-equiv="refresh" content="0;url=/dohtuproj/kirjaudu"/>
+        <meta http-equiv="refresh" content="0;url=../kirjaudu"/>
 		<link rel="stylesheet" href="logout.css">
 		<style>
 		h1 {

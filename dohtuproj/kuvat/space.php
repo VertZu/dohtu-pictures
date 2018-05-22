@@ -1,5 +1,7 @@
 <?PHP
 session_start();
+
+ini_set('default_charset', 'utf-8');
 if (isset($_SESSION['loggedin'])) {
     // talletetaan tieto muuttujaan, jotta helpompi käyttää myöhemmin html-koodissa
     $loggedin = $_SESSION['loggedin'];
@@ -66,16 +68,16 @@ $connection->close();
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Kuvat</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <link rel="stylesheet" type="text/css" media="screen" href="/dohtuproj/res/css/styledit.css"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="../res/css/styledit.css"/>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400italic,400,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="/dohtuproj/starability-minified/starability-all.min.css">
+        <link rel="stylesheet" href="../starability-minified/starability-all.min.css">
 
     </head>
     <body>
         <nav id="yo">
             <ul id="menu">
                 <div class="dropdown">
-                    <button id="dropbtn"><a class="active"  href="/dohtuproj/">Kuvat</a></button>
+                    <button id="dropbtn"><a class="active"  href="../">Kuvat</a></button>
 
 
                     <div class="dropdown-content">
@@ -96,7 +98,7 @@ $connection->close();
         <div id="content-slider">
             <div id="slider">
                 <div id="mask">
-                    <img src="/dohtuproj/images/space.jpg" alt="Avaruus"/>
+                    <img src="../images/space.jpg" alt="Avaruus"/>
                     </a>
                     <div class="tooltip">
                         <h1>Avaruus</h1>

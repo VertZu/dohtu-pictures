@@ -1,4 +1,4 @@
-
+﻿
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,9 +8,9 @@
     <body>
         <nav id="yo">
             <ul id="menu">
-                <li><a href="/dohtuproj/">Kuvat</a></li>
-                <li><a class="active" href="/dohtuproj/register">Rekisteröityminen</a></li>
-                <li><a href="/dohtuproj/kirjaudu">Kirjautuminen</a></li>
+                <li><a href="../">Kuvat</a></li>
+                <li><a class="active" href="../register">Rekisteröityminen</a></li>
+                <li><a href="../kirjaudu">Kirjautuminen</a></li>
             </ul>
         </nav>
         <h2 id="night">Rekisteröidy</h2>

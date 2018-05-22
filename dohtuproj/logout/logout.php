@@ -1,7 +1,7 @@
 <html>
     <head>
 	<!-- Ohjaa sivulle -->
-        <meta http-equiv="refresh" content="0;url=/dohtuproj/kirjaudu"/>
+        <meta http-equiv="refresh" content="0;url=../kirjaudu"/>
 		<link rel="stylesheet" href="logout.css">
 		<style>
 		h1 {
